@@ -12,10 +12,10 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class PaymentPage {
     private SelenideElement cardNumberLine  = $("[placeholder='0000 0000 0000 0000']");
-    private SelenideElement monthLine = $("[placeholder='02']");
-    private SelenideElement yearLine = $("[placeholder='25']");
+    private SelenideElement monthLine = $("[placeholder='08']");
+    private SelenideElement yearLine = $("[placeholder='22']");
     private SelenideElement ownerLine = $$("[class='input__control']").get(3);
-    private SelenideElement CvcLine = $("[placeholder='111']");
+    private SelenideElement cvcLine = $("[placeholder='999']");
     private SelenideElement buttonContinue = $(byText("Продолжить"));
 
     private SelenideElement successfulSending = $(withText("Операция одобрена Банком."));
@@ -30,7 +30,7 @@ public class PaymentPage {
         monthLine.setValue(month);
         yearLine.setValue(year);
         ownerLine.setValue(owner);
-        CvcLine.setValue(cvc);
+        cvcLine.setValue(cvc);
         buttonContinue.click();
     }
 

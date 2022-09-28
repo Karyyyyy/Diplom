@@ -6,7 +6,8 @@ import java.sql.SQLException;
 
 import static java.sql.DriverManager.getConnection;
 
-public class DataHelperSQL {private static final String url = System.getProperty("url");
+public class DataHelperSQL {
+    private static final String url = System.getProperty("url");
     private static final String user = System.getProperty("user");
     private static final String password = System.getProperty("password");
 
@@ -28,8 +29,9 @@ public class DataHelperSQL {private static final String url = System.getProperty
                 return null;
             }
         } catch (SQLException exception) {
-            throw new RuntimeException(exception);
+            exception.printStackTrace();
         }
+        return null;
     }
 
     public static String getPurchaseOnCreditCard() { //покупка в кредит
@@ -47,8 +49,9 @@ public class DataHelperSQL {private static final String url = System.getProperty
                 return null;
             }
         } catch (SQLException exception) {
-            throw new RuntimeException(exception);
+            exception.printStackTrace();
         }
+        return null;
     }
 
 
@@ -70,8 +73,7 @@ public class DataHelperSQL {private static final String url = System.getProperty
             prepareStatPayment.executeUpdate(payment);
 
         } catch (SQLException exception) {
-            throw new RuntimeException(exception);
+            exception.printStackTrace();
         }
-
     }
 }

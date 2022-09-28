@@ -21,7 +21,7 @@ public class UsualPayment {
 
     @BeforeEach
     void CleanDataBaseAndOpenWeb() { //очистить базу данных и открыть веб страницу
-        DataHelperSQL.cleanDataBase();
+        cleanDataBase();
         startPage = open("http://localhost:8080", StartPage.class);
         startPage.buyPaymentByCard();
     }
@@ -43,11 +43,11 @@ public class UsualPayment {
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwner();
-        val cvs = DataHelper.getValidCvs();
-        paymentPage.fillOutLine(cardNumber, month, year, owner, cvs);
+        val cvc = DataHelper.getValidCvc();
+        paymentPage.fillOutLine(cardNumber, month, year, owner, cvc);
         paymentPage.messageAboutSuccessfulPayment();
         val expected = DataHelper.getStatusFirstCard(); //ОР-какое сообщение банка вывести
-        val actual = DataHelperSQL.getPurchaseByDebitCard(); //ФР-покупка дебитовой картой
+        val actual = DataHelperSQL.getPurchaseByDebitCard(); //ФР-покупка дебетовой картой
         assertEquals(expected, actual);
     }
 }
