@@ -55,6 +55,6 @@ public class PaymentPage {
     }
 
     public void messageAboutTheMandatoryFillingInOfTheField () { //сообщение об обязательности заполнения поля
-        cardExpired.shouldBe(visible, Duration.ofSeconds(10));
+        requiredLine.shouldBe(visible, Duration.ofSeconds(10));
     }
 }

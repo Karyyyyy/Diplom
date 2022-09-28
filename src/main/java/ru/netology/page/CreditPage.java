@@ -1,8 +1,6 @@
 package ru.netology.page;
 
 import com.codeborne.selenide.SelenideElement;
-
-
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -13,10 +11,11 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class CreditPage {
     private SelenideElement cardNumberLine = $("[placeholder='0000 0000 0000 0000']");
-    private SelenideElement monthLine = $("[placeholder='02']");
-    private SelenideElement yearLine = $("[placeholder='25']");
+
+    private SelenideElement monthLine = $("[placeholder='08']");
+    private SelenideElement yearLine = $("[placeholder='22']");
     private SelenideElement ownerLine = $$("[class='input__control']").get(3);
-    private SelenideElement CvcLine = $("[placeholder='111']");
+    private SelenideElement CvcLine = $("[placeholder='999']");
     private SelenideElement buttonContinue = $(byText("Продолжить"));
 
     private SelenideElement successfulSending = $(withText("Операция одобрена Банком."));
