@@ -11,8 +11,10 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class CreditPage {
     private SelenideElement cardNumberLine = $("[placeholder='0000 0000 0000 0000']");
+    private SelenideElement cardSize = $("[maxlength='19']");
 
     private SelenideElement monthLine = $("[placeholder='08']");
+
     private SelenideElement yearLine = $("[placeholder='22']");
     private SelenideElement ownerLine = $$("[class='input__control']").get(3);
     private SelenideElement CvcLine = $("[placeholder='999']");
