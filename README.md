@@ -2,9 +2,9 @@
 
 ## Документация
 
-* [План выполнения работ]()
-* [Отчет о проведенном тестировании]()
-* [Отчет о проведенной автоматизации]()
+* [План выполнения работ](https://github.com/Karyyyyy/Diplom/blob/main/Plan.md)
+* [Отчет о проведенном тестировании](https://github.com/Karyyyyy/Diplom/blob/main/Report.md)
+* [Отчет о проведенной автоматизации](https://github.com/Karyyyyy/Diplom/blob/main/Summary.md)
 
 
 ## О проекте
