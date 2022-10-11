@@ -45,7 +45,7 @@ public class CreditPayment {
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        creditPage.messageAboutSuccessfulPayment();
+        creditPage.messageAboutSuccessfullPayment();
         val expected = DataHelper.getStatusFirstCard();
         val actual = DataHelperSQL.getPurchaseOnCreditCard();
         assertEquals(expected, actual);
@@ -60,7 +60,7 @@ public class CreditPayment {
         val owner = DataHelper.getLetterЁ();
         val cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        creditPage.messageAboutSuccessfulPayment();
+        creditPage.messageAboutSuccessfullPayment();
         val expected = DataHelper.getStatusFirstCard();
         val actual = DataHelperSQL.getPurchaseOnCreditCard();
         assertEquals(expected, actual);
@@ -75,7 +75,7 @@ public class CreditPayment {
         val owner = DataHelper.getDoubleNameOfTheOwner();
         val cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        creditPage.messageAboutSuccessfulPayment();
+        creditPage.messageAboutSuccessfullPayment();
         val expected = DataHelper.getStatusFirstCard();
         val actual = DataHelperSQL.getPurchaseOnCreditCard();
         assertEquals(expected, actual);
@@ -89,7 +89,7 @@ public class CreditPayment {
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        creditPage.messageAboutSuccessfulPayment();
+        creditPage.messageAboutUnsuccessfullPaymentRefused();
         val expected = DataHelper.getStatusSecondCard();
         val actual = DataHelperSQL.getPurchaseOnCreditCard();
         assertEquals(expected, actual);
@@ -114,7 +114,7 @@ public class CreditPayment {
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        creditPage.messageAboutUnsuccessfulPaymentRefused();
+        creditPage.messageAboutUnsuccessfullPaymentRefused();
     }
 
     @Test
@@ -243,7 +243,7 @@ public class CreditPayment {
         val owner = DataHelper.getOnNameOwnertr();
         val cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        creditPage.messageAboutSuccessfulPayment();
+        creditPage.messageAboutSuccessfullPayment();
     }
 
 
@@ -255,7 +255,7 @@ public class CreditPayment {
         val owner = DataHelper.getNameNndPatronymicWithSmallLetterInTheOwner();
         val cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        creditPage.messageAboutSuccessfulPayment();
+        creditPage.messageAboutSuccessfullPayment();
     }
 
     @Test
@@ -266,7 +266,7 @@ public class CreditPayment {
         val owner = DataHelper.getMoreThan30CharactersInTheOwner();
         val cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        creditPage.messageAboutSuccessfulPayment();
+        creditPage.messageAboutSuccessfullPayment();
     }
 
 
@@ -278,7 +278,7 @@ public class CreditPayment {
         val owner = DataHelper.getLettersSymbolsTextInTheOwner();
         val cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        creditPage.messageAboutSuccessfulPayment();
+        creditPage.messageAboutSuccessfullPayment();
     }
 
 
@@ -302,7 +302,7 @@ public class CreditPayment {
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCvcZero();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        creditPage.messageAboutSuccessfulPayment();
+        creditPage.messageAboutSuccessfullPayment();
     }
 
     @Test

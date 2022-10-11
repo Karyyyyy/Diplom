@@ -87,7 +87,7 @@ public class UsualPayment {
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getValidCvc();
         paymentPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        paymentPage.messageAboutSuccessfulPayment();
+        paymentPage.messageAboutUnsuccessfulPaymentRefused();
         val expected = DataHelper.getStatusSecondCard();
         val actual = DataHelperSQL.getPurchaseByDebitCard();
         assertEquals(expected, actual);

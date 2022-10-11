@@ -36,11 +36,11 @@ public class CreditPage {
         buttonContinue.click();
     }
 
-    public void messageAboutSuccessfulPayment() { //сообщение об успешной оплате
+    public void messageAboutSuccessfullPayment() { //сообщение об успешной оплате
         successfulSending.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    public void messageAboutUnsuccessfulPaymentRefused() { //сообщение о неудачной оплате-отказ
+    public void messageAboutUnsuccessfullPaymentRefused() { //сообщение о неудачной оплате-отказ
         failedSending.shouldBe(visible, Duration.ofSeconds(10));
     }
 
