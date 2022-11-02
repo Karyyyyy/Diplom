@@ -39,91 +39,91 @@ public class CreditPaymentTest {
 
     @Test
     void shouldApproveFirstCard() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutSuccessfullPayment();
-        val expected = DataHelper.getStatusFirstCard();
-        val actual = DataHelperSQL.getPurchaseOnCreditCard();
+        var expected = DataHelper.getStatusFirstCard();
+        var actual = DataHelperSQL.getPurchaseOnCreditCard();
         assertEquals(expected, actual);
     }
 
 
     @Test
     void shouldApproveOwnerNameWithTheLetter() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getLetterЁ();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getLetterEWithDots();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutSuccessfullPayment();
-        val expected = DataHelper.getStatusFirstCard();
-        val actual = DataHelperSQL.getPurchaseOnCreditCard();
+        var expected = DataHelper.getStatusFirstCard();
+        var actual = DataHelperSQL.getPurchaseOnCreditCard();
         assertEquals(expected, actual);
     }
 
 
     @Test
     void shouldApproveDoubleNameOfTheOwner() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getDoubleNameOfTheOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getDoubleNameOfTheOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutSuccessfullPayment();
-        val expected = DataHelper.getStatusFirstCard();
-        val actual = DataHelperSQL.getPurchaseOnCreditCard();
+        var expected = DataHelper.getStatusFirstCard();
+        var actual = DataHelperSQL.getPurchaseOnCreditCard();
         assertEquals(expected, actual);
     }
 
     @Test
     void shouldApproveSecondCard() {
-        val cardNumber = DataHelper.getSecondCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getSecondCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutUnsuccessfullPaymentRefused();
-        val expected = DataHelper.getStatusSecondCard();
-        val actual = DataHelperSQL.getPurchaseOnCreditCard();
+        var expected = DataHelper.getStatusSecondCard();
+        var actual = DataHelperSQL.getPurchaseOnCreditCard();
         assertEquals(expected, actual);
     }
 
     @Test
     void shouldLessThan16DigitsInTheCard() {
-        val cardNumber = DataHelper.getLessThan16DigitsInTheCard();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getLessThan16DigitsInTheCard();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutIncorrectDataFormat();
     }
 
     @Test
     void should16ZerosInTheCard() {
-        val cardNumber = DataHelper.get16ZerosInTheCard();
-        val month = DataHelper.getValidMonth(); //
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.get16ZerosInTheCard();
+        var month = DataHelper.getValidMonth(); //
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutUnsuccessfullPaymentRefused();
     }
 
     @Test
     void shouldLettersSymbolsTextInTheCard() {
-        val cardNumber = DataHelper.getLettersSymbolsText();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getLettersSymbolsText();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutIncorrectDataFormat();
     }
@@ -131,11 +131,11 @@ public class CreditPaymentTest {
 
     @Test
     void shouldEmptyFieldInTheCard() {
-        val cardNumber = DataHelper.getEmptyFieldInTheCard();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getEmptyFieldInTheCard();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutIncorrectDataFormat();
     }
@@ -143,11 +143,11 @@ public class CreditPaymentTest {
 
     @Test
     void shouldLettersSymbolsTextInTheMonth() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getLettersSymbolsTextInTheMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getLettersSymbolsTextInTheMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutIncorrectDataFormat();
     }
@@ -155,11 +155,11 @@ public class CreditPaymentTest {
 
     @Test
     void shouldMonthNumberMore12() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getMonthNumberMore12();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getMonthNumberMore12();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutIncorrectCardExpirationDate();
     }
@@ -167,33 +167,33 @@ public class CreditPaymentTest {
     //2.7_Негативный тест с пустым полем месяца
     @Test
     void shouldMonthFieldEmpty() { //пустой месяц
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getMonthFieldEmpty();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getMonthFieldEmpty();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutIncorrectDataFormat();
     }
 
     @Test
     void shouldYearFieldPrevious() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getYearFieldPrevious();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getYearFieldPrevious();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutCardExpiration();
     }
 
     @Test
     void shouldYearMoreThan6YearsOfTheCurrentYear() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getMoreThan6YearsOfTheCurrentYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getMoreThan6YearsOfTheCurrentYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutIncorrectCardExpirationDate();
     }
@@ -201,11 +201,11 @@ public class CreditPaymentTest {
 
     @Test
     void shouldYearZero() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getYearZero();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getYearZero();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutCardExpiration();
     }
@@ -213,11 +213,11 @@ public class CreditPaymentTest {
 
     @Test
     void shouldLettersSymbolsTextInTheYear() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getLettersSymbolsTextInTheYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getLettersSymbolsTextInTheYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutIncorrectDataFormat();
     }
@@ -225,11 +225,11 @@ public class CreditPaymentTest {
 
     @Test
     void shouldYearFieldEmpty() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getYearFieldEmpty();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getYearFieldEmpty();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutIncorrectDataFormat();
     }
@@ -237,11 +237,11 @@ public class CreditPaymentTest {
 
     @Test
     void shouldOnlyNameOwner() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getOnNameOwnertr();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getOnNameOwnertr();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutSuccessfullPayment();
     }
@@ -249,22 +249,22 @@ public class CreditPaymentTest {
 
     @Test
     void shouldNameNndPatronymicWithSmallLetterInTheOwner() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getNameNndPatronymicWithSmallLetterInTheOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getNameNndPatronymicWithSmallLetterInTheOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutSuccessfullPayment();
     }
 
     @Test
     void shouldMoreThan30CharactersInTheOwner() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getMoreThan30CharactersInTheOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getMoreThan30CharactersInTheOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutSuccessfullPayment();
     }
@@ -272,11 +272,11 @@ public class CreditPaymentTest {
 
     @Test
     void shouldLettersSymbolsTextInTheOwner() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getLettersSymbolsTextInTheOwner();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getLettersSymbolsTextInTheOwner();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutSuccessfullPayment();
     }
@@ -284,11 +284,11 @@ public class CreditPaymentTest {
 
     @Test
     void shouldOwnerFieldEmpty() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getOwnerFieldEmpty();
-        val cvc = DataHelper.getValidCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getOwnerFieldEmpty();
+        var cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutTheMandatoryFillingInOfTheField();
     }
@@ -296,33 +296,33 @@ public class CreditPaymentTest {
 
     @Test
     void shouldCvcZero() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getCvcZero();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getCvcZero();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutSuccessfullPayment();
     }
 
     @Test
     void shouldLettersSymbolsTextInTheCvc() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getLettersSymbolsTextInTheCvc();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getLettersSymbolsTextInTheCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutIncorrectDataFormat();
     }
 
     @Test
     void shouldEmptyFieldInTheCvc() {
-        val cardNumber = DataHelper.getFirstCardNumber();
-        val month = DataHelper.getValidMonth();
-        val year = DataHelper.getValidYear();
-        val owner = DataHelper.getValidOwner();
-        val cvc = DataHelper.getCvcFieldEmpty();
+        var cardNumber = DataHelper.getFirstCardNumber();
+        var month = DataHelper.getValidMonth();
+        var year = DataHelper.getValidYear();
+        var owner = DataHelper.getValidOwner();
+        var cvc = DataHelper.getCvcFieldEmpty();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
         creditPage.messageAboutIncorrectDataFormat();
     }

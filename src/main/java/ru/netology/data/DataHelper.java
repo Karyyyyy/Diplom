@@ -43,7 +43,7 @@ public class DataHelper {
         return "111";
     }
 
-    public static String getLetterЁ() {
+    public static String getLetterEWithDots() {
         return "Иванов Фёдор";
     }
 

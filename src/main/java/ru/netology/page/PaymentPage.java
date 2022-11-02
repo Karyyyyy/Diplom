@@ -34,27 +34,27 @@ public class PaymentPage {
         buttonContinue.click();
     }
 
-    public void messageAboutSuccessfulPayment() { //сообщение об успешной оплате
+    public void messageAboutSuccessfulPayment() {
         successfulSending.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    public void messageAboutUnsuccessfulPaymentRefused() { //сообщение о неудачной оплате-отказ
+    public void messageAboutUnsuccessfulPaymentRefused() {
         failedSending.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    public void messageAboutIncorrectDataFormat() { //сообщение о некорректном формате данных
+    public void messageAboutIncorrectDataFormat() {
         invalidFormat.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    public void messageAboutIncorrectCardExpirationDate() { //сообщение о неверном указании срока  действия карты
+    public void messageAboutIncorrectCardExpirationDate() {
         invalidCardExpirationDate.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    public void messageAboutCardExpiration () { //сообщение об истечении срока действия карты
+    public void messageAboutCardExpiration () {
         cardExpired.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    public void messageAboutTheMandatoryFillingInOfTheField () { //сообщение об обязательности заполнения поля
+    public void messageAboutTheMandatoryFillingInOfTheField () {
         requiredLine.shouldBe(visible, Duration.ofSeconds(10));
     }
 }
